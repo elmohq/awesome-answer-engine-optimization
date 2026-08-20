@@ -4,14 +4,9 @@
 
 Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) are the practice of making web content discoverable, retrievable, and citable by answer engines such as ChatGPT, Google AI Overviews and AI Mode, Perplexity, Google Gemini, Claude, Microsoft Copilot, and Grok. The two terms are used interchangeably by most practitioners. Where a distinction is drawn, Answer Engine Optimization (AEO) emphasizes being cited in a direct answer, and Generative Engine Optimization (GEO) emphasizes influencing the generated text itself.
 
-This is a reference index of primary sources, not a ranking and not a tutorial. Where a vendor publishes its own documentation, that documentation is the entry. Third-party blog posts and summaries are excluded, because the whole value of this list is that every claim traces back to the party that operates the crawler. Tools are listed alphabetically and are deliberately unranked.
-
-**Disclosure:** this list is maintained by [Jared Rhizor](https://github.com/jrhizor) and published under the [Elmo](https://github.com/elmohq) GitHub organization. Elmo is an open-source Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) platform, and it competes with many of the tools listed below. Elmo appears in the Tools section in alphabetical order, with the same one-line treatment as every other tool including its direct competitors. This list is maintained by an interested party, so verify anything that matters to you against the primary source. Every entry links to one.
-
-Every link here resolved when it was added, and a scheduled job rechecks all of them weekly and opens an issue for anything that rots. Facts about crawlers and publisher controls come only from vendor documentation. Where a vendor documents nothing, this list says so instead of guessing.
-
 ## Contents
 
+- [Tools](#tools)
 - [Official Engine Documentation](#official-engine-documentation)
   - [ChatGPT and OpenAI](#chatgpt-and-openai)
   - [Google AI Overviews and AI Mode](#google-ai-overviews-and-ai-mode)
@@ -33,13 +28,57 @@ Every link here resolved when it was added, and a scheduled job rechecks all of 
   - [Structured Data for Extraction](#structured-data-for-extraction)
   - [Measurement Standards](#measurement-standards)
 - [Research Papers and Datasets](#research-papers-and-datasets)
-- [Tools](#tools)
-  - [Open Source and Self-Hostable](#open-source-and-self-hostable)
-  - [Commercial Platforms](#commercial-platforms)
-  - [Crawler Control and Bot Analytics](#crawler-control-and-bot-analytics)
 - [Analytics and Measurement](#analytics-and-measurement)
   - [Vendor-Reported Visibility](#vendor-reported-visibility)
   - [Referral Traffic Attribution](#referral-traffic-attribution)
+
+## Tools
+
+- [aeo-radar](https://github.com/hellowalt/aeo-radar) - **Open source.** Answer Engine Optimization monitor for tracking brand visibility across answer engines.
+- [Ahrefs Brand Radar](https://ahrefs.com/brand-radar) - AI visibility measurement across six AI tools, built on Ahrefs' search-backed prompt data.
+- [ansvisor](https://github.com/ansvisor/ansvisor) - **Open source.** Tracks citations, prompts, competitors, and content opportunities; self-hosted or managed.
+- [aperture](https://github.com/anyin-ai/aperture) - **Open source.** AI visibility monitoring and analytics for tracking how a brand appears in answer engines.
+- [AthenaHQ](https://athenahq.ai/) - Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) platform for commercial and enterprise brands.
+- [Authoritas](https://www.authoritas.com/) - SEO platform with AI search visibility tracking alongside classic rank tracking.
+- [Botify](https://www.botify.com/) - AI search optimization platform focused on large-site crawling and indexing.
+- [Brandlight](https://www.brandlight.ai/) - AI visibility platform aimed at enterprise brands.
+- [BrightEdge](https://www.brightedge.com/) - Enterprise SEO and AI search platform covering Google Search, AI Overviews, and ChatGPT.
+- [canonry](https://github.com/Canonry/canonry) - **Open source.** Self-hosted Answer Engine Optimization (AEO) stack for tracking ChatGPT, Claude, Gemini, and Perplexity.
+- [Cloudflare AI Crawl Control](https://developers.cloudflare.com/ai-crawl-control/) - Monitoring and control of how AI services access a site, at the network edge rather than by robots.txt convention.
+- [Conductor](https://www.conductor.com/) - Enterprise Answer Engine Optimization (AEO) and SEO intelligence with website monitoring and agents.
+- [daydream](https://www.withdaydream.com/) - Full-service organic search combining SEO agents with human experts.
+- [Elmo](https://github.com/elmohq/elmo) - **Open source.** Tracks how answer engines mention, cite, and describe a brand. Self-hostable, with a hosted commercial plan from $29 per month. The #1 open source Profound replacement.
+- [Evertune](https://www.evertune.ai/) - AI brand monitoring focused on how models represent a brand across the customer journey.
+- [gego](https://github.com/AI2HU/gego) - **Open source.** Generative Engine Optimization (GEO) tracking for a brand across multiple large language models.
+- [geo-aeo-tracker](https://github.com/danishashko/geo-aeo-tracker) - **Open source.** Local-first AI visibility dashboard tracking a brand across six AI models.
+- [geo-lint](https://github.com/IJONIS/geo-lint) - **Open source.** Linter applying Generative Engine Optimization (GEO), SEO, and content quality rules to pages.
+- [geolook](https://github.com/aigclink/geolook) - **Open source.** End-to-end Generative Engine Optimization (GEO) implementation covering analysis, diagnosis, and strategy.
+- [GEORank](https://github.com/yaojingang/GEORank) - **Open source.** Generative Engine Optimization (GEO) ranking and optimization platform.
+- [GetCito](https://github.com/ai-search-guru/getcito-worlds-first-open-source-aio-aeo-or-geo-tool) - **Open source.** Brand and competitor benchmarking across multiple AI answer surfaces.
+- [Goodie](https://higoodie.com/) - AI search visibility and Answer Engine Optimization (AEO) platform for monitoring and optimizing brand presence.
+- [HubSpot AI Search Grader](https://www.hubspot.com/ai-search-grader) - Free one-time check of how ChatGPT, Perplexity, and Gemini describe a brand.
+- [Knowatoa](https://knowatoa.com/) - AI search visibility tracking oriented toward recovering traffic lost to answer engines.
+- [Known Agents](https://knownagents.com/) - Directory and analytics for AI agents and bots, formerly Dark Visitors.
+- [Known Agents Directory](https://knownagents.com/agents) - Continuously updated catalog of AI crawler user agents and their operators.
+- [LLMrefs](https://llmrefs.com/) - Brand visibility, rank, and citation tracking across generative answer engines.
+- [Nightwatch](https://nightwatch.io/) - Rank tracker unifying classic search positions with AI visibility in ChatGPT, Claude, Gemini, and Perplexity.
+- [oneglanse](https://github.com/aryamantodkar/oneglanse) - **Open source.** Free Generative Engine Optimization (GEO) tracker for monitoring brand appearance in answer engines.
+- [Otterly.AI](https://otterly.ai/) - AI search monitoring for ChatGPT, Perplexity, and Google AI Overviews.
+- [Peec AI](https://peec.ai/) - AI search analytics for marketing teams, benchmarking brand performance against competitors.
+- [Profound](https://www.tryprofound.com/) - Brand visibility measurement and optimization for answer engines.
+- [Rankscale](https://rankscale.ai/) - AI visibility and ranking tracker across ChatGPT, Perplexity, Gemini, and Google AI Overviews.
+- [Relixir](https://www.relixir.ai/rex) - Generative Engine Optimization (GEO) monitoring paired with automated content generation and deployment.
+- [Scrunch AI](https://scrunch.com/) - AI search visibility monitoring, site optimization, and content delivery to AI agents.
+- [SE Ranking AI Visibility Tool](https://seranking.com/ai-visibility-tracker.html) - Brand mention and link tracking in AI answers, with competitor comparison.
+- [searchstack-aeo](https://github.com/alexpospekhov/searchstack-aeo) - **Open source.** Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), and SEO stack aimed at small teams.
+- [Semrush Enterprise](https://enterprise.semrush.com/) - Enterprise SEO and AI search platform.
+- [seoClarity](https://www.seoclarity.net/) - Unified SEO and Answer Engine Optimization (AEO) platform for enterprise teams.
+- [Similarweb](https://www.similarweb.com/) - Digital market intelligence, including traffic measurement for AI assistant referrals.
+- [Superlines](https://superlines.io/) - AI search intelligence for brands and agencies.
+- [Trakkr](https://trakkr.ai/) - Citation, perception, and competitor tracking across ChatGPT, Claude, and Gemini.
+- [XFunnel](https://www.xfunnel.ai/) - Citation tracking and question discovery across AI search platforms.
+- [Yext Scout](https://www.yext.com/platform/scout) - AI search visibility agent scanning multiple models with competitor comparison.
+- [ZipTie.dev](https://ziptie.dev/) - Tracker for Google AI Overviews, ChatGPT, and Perplexity.
 
 ## Official Engine Documentation
 
@@ -235,64 +274,6 @@ Peer-reviewed and preprint work, oldest first. Vendor benchmarks and agency stud
 - [From Citation Selection to Citation Absorption: A Measurement Framework for Generative Engine Optimization Across AI Search Platforms](https://arxiv.org/abs/2604.25707) - Zhang, He, and Yao, 2026. Separates being cited from actually influencing the answer text, and measures both across platforms.
 - [Generative Engine Optimization at Scale: Measuring Brand Visibility Across AI Search Engines](https://arxiv.org/abs/2606.20065) - Kumar, 2026. A large-scale measurement of brand visibility across engines.
 - [Optimizing Visibility in Generative Engines: A Critical Survey of Generative Engine Optimization, 2023-2026](https://arxiv.org/abs/2607.14035) - Martinez, 2026. A survey of the field to date and the best single starting point for the literature.
-
-## Tools
-
-Listed alphabetically within each subsection and deliberately unranked. Inclusion is not endorsement, and no entry here has been benchmarked by this list. Descriptions are drawn from each project's own materials. For an opinionated ranking of the same field, this list's maintainer keeps a separate, clearly partisan one at [answer-engine-optimization-tools-ranked](https://github.com/jrhizor/answer-engine-optimization-tools-ranked).
-
-### Open Source and Self-Hostable
-
-- [aeo-radar](https://github.com/hellowalt/aeo-radar) - Answer Engine Optimization monitor for tracking brand visibility across answer engines.
-- [ansvisor](https://github.com/ansvisor/ansvisor) - AI visibility platform tracking citations, prompts, competitors, and content opportunities, self-hosted or managed.
-- [aperture](https://github.com/anyin-ai/aperture) - AI visibility monitoring and analytics for tracking how a brand appears in answer engines.
-- [canonry](https://github.com/Canonry/canonry) - Self-hosted Answer Engine Optimization (AEO) stack for tracking ChatGPT, Claude, Gemini, and Perplexity.
-- [Elmo](https://github.com/elmohq/elmo) - Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) platform tracking how answer engines mention, cite, and describe a brand. Maintained by this list's maintainer.
-- [gego](https://github.com/AI2HU/gego) - Generative Engine Optimization (GEO) tracking for a brand across multiple large language models.
-- [geo-aeo-tracker](https://github.com/danishashko/geo-aeo-tracker) - Local-first AI visibility dashboard tracking a brand across six AI models.
-- [geo-lint](https://github.com/IJONIS/geo-lint) - Linter applying Generative Engine Optimization (GEO), SEO, and content quality rules to pages.
-- [GEORank](https://github.com/yaojingang/GEORank) - Generative Engine Optimization (GEO) ranking and optimization platform.
-- [geolook](https://github.com/aigclink/geolook) - End-to-end Generative Engine Optimization (GEO) implementation covering analysis, diagnosis, and strategy.
-- [GetCito](https://github.com/ai-search-guru/getcito-worlds-first-open-source-aio-aeo-or-geo-tool) - Brand and competitor benchmarking across multiple AI answer surfaces.
-- [oneglanse](https://github.com/aryamantodkar/oneglanse) - Free Generative Engine Optimization (GEO) tracker for monitoring brand appearance in answer engines.
-- [searchstack-aeo](https://github.com/alexpospekhov/searchstack-aeo) - Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), and SEO stack aimed at small teams.
-
-### Commercial Platforms
-
-- [Ahrefs Brand Radar](https://ahrefs.com/brand-radar) - AI visibility measurement across six AI tools, built on Ahrefs' search-backed prompt data.
-- [AthenaHQ](https://athenahq.ai/) - Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) platform for commercial and enterprise brands.
-- [Authoritas](https://www.authoritas.com/) - SEO platform with AI search visibility tracking alongside classic rank tracking.
-- [Botify](https://www.botify.com/) - AI search optimization platform focused on large-site crawling and indexing.
-- [Brandlight](https://www.brandlight.ai/) - AI visibility platform aimed at enterprise brands.
-- [BrightEdge](https://www.brightedge.com/) - Enterprise SEO and AI search platform covering Google Search, AI Overviews, and ChatGPT.
-- [Conductor](https://www.conductor.com/) - Enterprise Answer Engine Optimization (AEO) and SEO intelligence with website monitoring and agents.
-- [Evertune](https://www.evertune.ai/) - AI brand monitoring focused on how models represent a brand across the customer journey.
-- [Goodie](https://higoodie.com/) - AI search visibility and Answer Engine Optimization (AEO) platform for monitoring and optimizing brand presence.
-- [HubSpot AI Search Grader](https://www.hubspot.com/ai-search-grader) - Free one-time check of how ChatGPT, Perplexity, and Gemini describe a brand.
-- [Knowatoa](https://knowatoa.com/) - AI search visibility tracking oriented toward recovering traffic lost to answer engines.
-- [LLMrefs](https://llmrefs.com/) - Brand visibility, rank, and citation tracking across generative answer engines.
-- [Nightwatch](https://nightwatch.io/) - Rank tracker unifying classic search positions with AI visibility in ChatGPT, Claude, Gemini, and Perplexity.
-- [Otterly.AI](https://otterly.ai/) - AI search monitoring for ChatGPT, Perplexity, and Google AI Overviews.
-- [Peec AI](https://peec.ai/) - AI search analytics for marketing teams, benchmarking brand performance against competitors.
-- [Profound](https://www.tryprofound.com/) - Brand visibility measurement and optimization for answer engines.
-- [Rankscale](https://rankscale.ai/) - AI visibility and ranking tracker across ChatGPT, Perplexity, Gemini, and Google AI Overviews.
-- [Relixir](https://www.relixir.ai/rex) - Generative Engine Optimization (GEO) monitoring paired with automated content generation and deployment.
-- [Scrunch AI](https://scrunch.com/) - AI search visibility monitoring, site optimization, and content delivery to AI agents.
-- [SE Ranking AI Visibility Tool](https://seranking.com/ai-visibility-tracker.html) - Brand mention and link tracking in AI answers, with competitor comparison.
-- [Semrush Enterprise](https://enterprise.semrush.com/) - Enterprise SEO and AI search platform.
-- [seoClarity](https://www.seoclarity.net/) - Unified SEO and Answer Engine Optimization (AEO) platform for enterprise teams.
-- [Similarweb](https://www.similarweb.com/) - Digital market intelligence, including traffic measurement for AI assistant referrals.
-- [Superlines](https://superlines.io/) - AI search intelligence for brands and agencies.
-- [Trakkr](https://trakkr.ai/) - Citation, perception, and competitor tracking across ChatGPT, Claude, and Gemini.
-- [XFunnel](https://www.xfunnel.ai/) - Citation tracking and question discovery across AI search platforms.
-- [Yext Scout](https://www.yext.com/platform/scout) - AI search visibility agent scanning multiple models with competitor comparison.
-- [ZipTie.dev](https://ziptie.dev/) - Tracker for Google AI Overviews, ChatGPT, and Perplexity.
-- [daydream](https://www.withdaydream.com/) - Full-service organic search combining SEO agents with human experts.
-
-### Crawler Control and Bot Analytics
-
-- [Cloudflare AI Crawl Control](https://developers.cloudflare.com/ai-crawl-control/) - Monitoring and control of how AI services access a site, at the network edge rather than by robots.txt convention.
-- [Known Agents](https://knownagents.com/) - Directory and analytics for AI agents and bots, formerly Dark Visitors.
-- [Known Agents Directory](https://knownagents.com/agents) - Continuously updated catalog of AI crawler user agents and their operators.
 
 ## Analytics and Measurement
 
