@@ -1,0 +1,86 @@
+name: link-check
+
+on:
+  schedule:
+    # Every Monday at 07:00 UTC.
+    - cron: '0 7 * * 1'
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - '**.md'
+      - 'scripts/check_links.py'
+      - '.github/workflows/link-check.yml'
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: link-check
+  cancel-in-progress: false
+
+jobs:
+  check:
+    name: Check every link for rot
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Check links
+        id: check
+        run: python3 scripts/check_links.py
+        continue-on-error: true
+
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-report
+          path: |
+            link-report.md
+            link-results.json
+          if-no-files-found: warn
+
+      - name: Open or update the dead-link issue
+        if: steps.check.outcome == 'failure' && github.event_name != 'pull_request'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          TITLE="Dead links found by the weekly link check"
+
+          {
+            echo "The weekly link check found links that no longer resolve."
+            echo
+            echo "A dead link is the one failure mode this list cannot tolerate, so"
+            echo "please fix or remove each entry below. Replace it with the URL the"
+            echo "vendor moved the page to, or delete the row. A missing row is fine."
+            echo
+            cat link-report.md
+            echo
+            echo "[Full run log]($RUN_URL)"
+          } > issue-body.md
+
+          EXISTING=$(gh issue list --repo "$REPO" --state open \
+            --label link-rot --json number --jq '.[0].number // empty')
+
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --repo "$REPO" --body-file issue-body.md
+            echo "Commented on existing issue #$EXISTING."
+          else
+            gh label create link-rot --repo "$REPO" \
+              --description "Links that no longer resolve" --color d73a4a 2>/dev/null || true
+            gh issue create --repo "$REPO" --title "$TITLE" \
+              --label link-rot --body-file issue-body.md
+          fi
+
+      - name: Fail if links are dead
+        if: steps.check.outcome == 'failure'
+        run: |
+          echo "Dead links found. See the report above." >&2
+          exit 1

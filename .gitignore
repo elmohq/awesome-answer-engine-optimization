@@ -1,0 +1,4 @@
+node_modules/
+link-results.json
+link-report.md
+.DS_Store
