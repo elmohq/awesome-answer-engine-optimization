@@ -3,9 +3,5 @@
 # Keep this file as short as humanly possible. It exists for links that cannot
 # be checked automatically, not for links that are broken. Every line needs a
 # comment saying why.
-
-# This repository and its sibling list. Both return 404 to an anonymous client
-# until the repository is created and pushed. Remove these two lines after the
-# first push so that genuine rot is caught.
-https://github.com/elmohq/awesome-answer-engine-optimization/issues
-https://github.com/jrhizor/answer-engine-optimization-tools-ranked
+#
+# Currently empty, which is how it should stay.
