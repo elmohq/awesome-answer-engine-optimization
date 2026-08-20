@@ -6,8 +6,14 @@ weekly in CI and opens an issue when something rots.
 
 Statuses:
   ok            2xx or a redirect chain ending in 2xx
-  needs-review  401, 403, 405, 429 - almost always bot filtering, not rot
-  dead          404, 410, 5xx after retries, DNS failures, timeouts
+  needs-review  401, 403, 405, 429, 5xx, timeouts, connection failures - all of
+                which a healthy page produces from a CI runner often enough that
+                failing the build on them would just train people to ignore it
+  dead          404, 410, 451, or a domain that stopped resolving entirely
+
+Only "dead" fails the build. That line is deliberate: this job is worth having
+only if a red run means a genuinely broken link, so anything ambiguous is
+reported for a human instead of shouting.
 
 Writes link-report.md and link-results.json. Exits 1 if anything is dead.
 
@@ -19,6 +25,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import socket
 import ssl
 import sys
 import time
@@ -44,6 +51,9 @@ HEADERS = {
 # Hosts that answer an automated client with a challenge no matter what.
 # Their links are still checked; failures are reported as needs-review.
 SOFT_BLOCK_CODES = {401, 403, 405, 429}
+
+# Definitive rot. Everything else that fails is treated as ambiguous.
+DEAD_CODES = {404, 410, 451}
 
 # Hosts known to reject non-browser clients outright, sometimes with a 400.
 # Their pages are real; verify them by hand rather than treating them as rot.
@@ -89,36 +99,54 @@ def extract(paths: list[Path]) -> dict[str, list[str]]:
     return found
 
 
-def probe(url: str, method: str) -> tuple[int | None, str, str]:
+def probe(url: str, method: str) -> tuple[int | None, str, str, str]:
+    """Return (status, final_url, error_text, failure_kind).
+
+    failure_kind is "" on an HTTP response of any code, "dns" when the hostname
+    itself stopped resolving, and "transport" for timeouts and connection
+    errors, which are usually the network and not the site.
+    """
     req = urllib.request.Request(url, method=method, headers=HEADERS)
     try:
         with urllib.request.urlopen(req, timeout=45, context=CTX) as resp:
-            return resp.status, resp.url, ""
+            return resp.status, resp.url, "", ""
     except urllib.error.HTTPError as exc:
-        return exc.code, getattr(exc, "url", url), ""
-    except Exception as exc:  # noqa: BLE001 - any transport failure is a failure
-        return None, url, f"{type(exc).__name__}: {exc}"
+        return exc.code, getattr(exc, "url", url), "", ""
+    except urllib.error.URLError as exc:
+        reason = getattr(exc, "reason", exc)
+        kind = "dns" if isinstance(reason, socket.gaierror) else "transport"
+        return None, url, f"{type(reason).__name__}: {reason}", kind
+    except Exception as exc:  # noqa: BLE001 - any transport failure is ambiguous
+        return None, url, f"{type(exc).__name__}: {exc}", "transport"
 
 
 def check(url: str) -> dict:
-    status, final, error = None, url, ""
-    for attempt in range(2):
+    status, final, error, kind = None, url, "", ""
+    # Three attempts with backoff. A CI runner sees transient timeouts that a
+    # laptop never does, and one flaky request must not condemn a live page.
+    for attempt in range(3):
         # HEAD first; many servers reject it, so fall back to GET.
-        status, final, error = probe(url, "HEAD")
+        status, final, error, kind = probe(url, "HEAD")
         if status is None or status >= 400:
-            status, final, error = probe(url, "GET")
+            status, final, error, kind = probe(url, "GET")
         if status is not None and status < 400:
             break
-        if attempt == 0:
-            time.sleep(3)
+        if status in DEAD_CODES:
+            break  # Definitive; retrying a 404 just wastes time.
+        if attempt < 2:
+            time.sleep(5 * (attempt + 1))
 
     host = urllib.parse.urlparse(url).hostname or ""
     if status is not None and status < 400:
         state = "ok"
-    elif status in SOFT_BLOCK_CODES or host in SOFT_BLOCK_HOSTS:
-        state = "needs-review"
-    else:
+    elif status in DEAD_CODES:
         state = "dead"
+    elif kind == "dns":
+        # The hostname stopped resolving through every attempt: the site is gone.
+        state = "dead"
+    else:
+        # 5xx, timeouts, connection resets, and bot challenges all land here.
+        state = "needs-review"
 
     return {
         "url": url,
@@ -164,13 +192,19 @@ def main() -> int:
         f"Checked {len(results)} links on {checked_at}.",
         "",
         f"- {len(results) - len(dead) - len(review)} resolved",
-        f"- {len(review)} refused an automated client",
+        f"- {len(review)} inconclusive (bot challenge, server error, or timeout)",
         f"- {len(dead)} dead",
         f"- {len(skipped)} skipped by scripts/link-ignore.txt",
         "",
     ]
     if dead:
-        lines += ["## Dead links", "", "These returned 404, 410, a server error, or did not resolve at all.", ""]
+        lines += [
+            "## Dead links",
+            "",
+            "These returned 404, 410, or 451, or their domain stopped resolving.",
+            "Treat them as real rot: fix the URL or delete the entry.",
+            "",
+        ]
         for r in dead:
             detail = r["error"] or f"HTTP {r['status']}"
             lines.append(f"- [ ] `{detail}` {r['url']} (in {', '.join(r['files'])})")
@@ -179,9 +213,10 @@ def main() -> int:
         lines += [
             "## Needs a human check",
             "",
-            "These refused an automated client with 401, 403, 405, or 429. That is",
-            "usually bot filtering rather than rot, so open each one in a browser",
-            "before changing anything.",
+            "Bot challenges, server errors, and timeouts. A CI runner gets these",
+            "from perfectly healthy pages far more often than a browser does, so",
+            "open each one yourself before changing anything. If one persists for",
+            "weeks, it is probably real.",
             "",
         ]
         for r in review:
