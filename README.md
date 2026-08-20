@@ -95,6 +95,7 @@ Vendor-published documentation on crawling, citations, publisher controls, and a
 - [Announcing User-Agent Change for Bing Crawler Bingbot](https://blogs.bing.com/webmaster/april-2022/Announcing-user-agent-change-for-Bing-crawler-bingbot) - The announcement that carries the current bingbot user-agent strings verbatim.
 - [Announcing New Options for Webmasters to Control Usage of Their Content in Bing Chat](https://blogs.bing.com/webmaster/september-2023/Announcing-new-options-for-webmasters-to-control-usage-of-their-content-in-Bing-Chat) - The `NOCACHE` and `NOARCHIVE` controls that govern whether Copilot may quote and link a page.
 - [Bing Introduces Support for the data-nosnippet HTML Attribute](https://blogs.bing.com/webmaster/October-2025/Bing-Introduces-Support-for-the-data-nosnippet-HTML-Attribute) - Element-level control over which parts of a page Bing may show.
+- [Introducing AI Performance in Bing Webmaster Tools](https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview) - Launch announcement, and the definition of grounding queries and citations as Microsoft measures them.
 - [New AI Visibility Insights in Bing Webmaster Tools](https://blogs.bing.com/search/June-2026/New-AI-Visibility-Insights-in-Bing-Webmaster-Tools-Intents-Topics-Citation-Share-Compare) - The expansion that added intents, topics, citation share, and competitive comparison.
 
 ### Grok and xAI
@@ -147,7 +148,7 @@ Build the retrieval index an answer engine draws on. These are the crawlers that
 | Microsoft  | `bingbot`          | `Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; bingbot/2.0; +http://www.bing.com/bingbot.htm) Chrome/W.X.Y.Z Safari/537.36 Edg/W.X.Y.Z`                              |
 | Mistral    | `MistralAI-Index`  | `Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; MistralAI-Index/1.0; +https://docs.mistral.ai/robots)`                                                                |
 
-Google states that AI Overviews and AI Mode are served from Google Search, so Googlebot is the crawler involved and standard Search eligibility is the prerequisite. Perplexity states that PerplexityBot is used to surface and link sites in Perplexity search results and is not used to crawl content for AI foundation models.
+Google's position is that "AI is built into Search and integral to how Search functions, which is why robots.txt directives for Googlebot is the control for site owners to manage access to how their sites are crawled for Search." There is no separate AI Overviews or AI Mode crawler to allow or block. Perplexity states that PerplexityBot is used to surface and link sites in Perplexity search results and is not used to crawl content for AI foundation models.
 
 ### User-Triggered Fetchers
 
@@ -203,7 +204,7 @@ OpenAI and Perplexity both take the IP-range approach instead: each publishes a 
 - [llms.txt Directory](https://directory.llmstxt.cloud/) - Directory of sites that publish an llms.txt file.
 - [llms.txt Site Index](https://llmstxt.site/) - A second index of published llms.txt files, useful for seeing real-world formatting in practice.
 
-Google states in its optimization guide that you do not need to create new machine-readable files or AI-specific markup to appear in its generative AI features. Weigh that against the effort before adopting llms.txt.
+Weigh the effort against what the engines say. Google's optimization guide addresses llms.txt by name and states that you do not need to create new machine-readable files, AI text files, markup, or Markdown to appear in Google Search including its generative AI capabilities, "as Google Search itself doesn't use them." No other engine in this list documents reading llms.txt either. That does not make publishing one harmful; it does mean nobody has documented a benefit.
 
 ### Structured Data for Extraction
 
@@ -304,7 +305,7 @@ Where each engine's activity actually shows up. Two different things get measure
 - [Introducing Search Generative AI Performance Reports](https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports) - Google's announcement of those reports and what the metrics do and do not include.
 - [Bing Webmaster Tools AI Performance](https://www.bing.com/webmasters/help/ai-performance-9f8e7d6c) - Citation counts, page-level performance, and the grounding queries Copilot generated internally to find your content.
 
-Google reports impressions in generative AI features. Microsoft reports citations and grounding queries. These are not the same metric and should not be summed.
+Google reports impressions in generative AI features. Microsoft reports citations and grounding queries, and since June 2026 also intent labels, topic groups, and citation share; both Microsoft announcements are linked in the Copilot section above. Impressions and citations are not the same metric and should not be summed.
 
 Neither Perplexity, OpenAI, Anthropic, nor xAI operates a public webmaster console reporting citations back to site owners. For those engines, referral traffic and third-party trackers are all there is.
 

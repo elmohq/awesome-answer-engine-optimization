@@ -23,6 +23,7 @@ import ssl
 import sys
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
@@ -44,10 +45,33 @@ HEADERS = {
 # Their links are still checked; failures are reported as needs-review.
 SOFT_BLOCK_CODES = {401, 403, 405, 429}
 
+# Hosts known to reject non-browser clients outright, sometimes with a 400.
+# Their pages are real; verify them by hand rather than treating them as rot.
+SOFT_BLOCK_HOSTS = {
+    "developers.facebook.com",
+    "www.facebook.com",
+    "www.linkedin.com",
+    "x.com",
+    "twitter.com",
+}
+
+IGNORE_FILE = ROOT / "scripts" / "link-ignore.txt"
+
 INLINE_LINK = re.compile(r"\[[^\]]*\]\((https?://[^)\s]+)\)")
 BARE_URL = re.compile(r"(?<![(<\w])(https?://[^\s<>)\"'`]+)")
 
 CTX = ssl.create_default_context()
+
+
+def load_ignored() -> set[str]:
+    """URLs deliberately excluded from the check, one per line."""
+    if not IGNORE_FILE.exists():
+        return set()
+    return {
+        line.strip()
+        for line in IGNORE_FILE.read_text(encoding="utf-8").splitlines()
+        if line.strip() and not line.startswith("#")
+    }
 
 
 def extract(paths: list[Path]) -> dict[str, list[str]]:
@@ -88,9 +112,10 @@ def check(url: str) -> dict:
         if attempt == 0:
             time.sleep(3)
 
+    host = urllib.parse.urlparse(url).hostname or ""
     if status is not None and status < 400:
         state = "ok"
-    elif status in SOFT_BLOCK_CODES:
+    elif status in SOFT_BLOCK_CODES or host in SOFT_BLOCK_HOSTS:
         state = "needs-review"
     else:
         state = "dead"
@@ -117,7 +142,13 @@ def main() -> int:
         ) + sorted(ROOT.glob(".github/*.md"))
 
     targets = extract([p for p in paths if p.exists()])
+    ignored = load_ignored()
+    skipped = sorted(set(targets) & ignored)
+    for url in skipped:
+        del targets[url]
     print(f"Checking {len(targets)} unique links across {len(paths)} files.")
+    if skipped:
+        print(f"Skipping {len(skipped)} ignored links.")
 
     with ThreadPoolExecutor(max_workers=8) as pool:
         results = list(pool.map(check, sorted(targets)))
@@ -135,6 +166,7 @@ def main() -> int:
         f"- {len(results) - len(dead) - len(review)} resolved",
         f"- {len(review)} refused an automated client",
         f"- {len(dead)} dead",
+        f"- {len(skipped)} skipped by scripts/link-ignore.txt",
         "",
     ]
     if dead:
