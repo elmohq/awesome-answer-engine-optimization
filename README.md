@@ -62,6 +62,7 @@ Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) are th
 - [Known Agents Directory](https://knownagents.com/agents) - Continuously updated catalog of AI crawler user agents and their operators.
 - [LLMrefs](https://llmrefs.com/) - Brand visibility, rank, and citation tracking across generative answer engines.
 - [Nightwatch](https://nightwatch.io/) - Rank tracker unifying classic search positions with AI visibility in ChatGPT, Claude, Gemini, and Perplexity.
+- [NotFair Plugin](https://github.com/nowork-studio/notfair-plugin) - **Open source.** Agent Skill collection for auditing and rewriting content for citation in ChatGPT, Claude, Perplexity, Gemini, and Google AI Overviews.
 - [oneglanse](https://github.com/aryamantodkar/oneglanse) - **Open source.** Free Generative Engine Optimization (GEO) tracker for monitoring brand appearance in answer engines.
 - [Otterly.AI](https://otterly.ai/) - AI search monitoring for ChatGPT, Perplexity, and Google AI Overviews.
 - [Peec AI](https://peec.ai/) - AI search analytics for marketing teams, benchmarking brand performance against competitors.
