@@ -68,6 +68,7 @@ Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) are th
 - [Profound](https://www.tryprofound.com/) - Brand visibility measurement and optimization for answer engines.
 - [Rankscale](https://rankscale.ai/) - AI visibility and ranking tracker across ChatGPT, Perplexity, Gemini, and Google AI Overviews.
 - [Relixir](https://www.relixir.ai/rex) - Generative Engine Optimization (GEO) monitoring paired with automated content generation and deployment.
+- [Screpy](https://screpy.com/feature/ai-visibility/) - Tracks monitored AI-search prompts, brand mentions, citations, sentiment, and competitor visibility.
 - [Scrunch AI](https://scrunch.com/) - AI search visibility monitoring, site optimization, and content delivery to AI agents.
 - [SE Ranking AI Visibility Tool](https://seranking.com/ai-visibility-tracker.html) - Brand mention and link tracking in AI answers, with competitor comparison.
 - [searchstack-aeo](https://github.com/alexpospekhov/searchstack-aeo) - **Open source.** Answer Engine Optimization (AEO), Generative Engine Optimization (GEO), and SEO stack aimed at small teams.
