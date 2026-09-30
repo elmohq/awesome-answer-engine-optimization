@@ -74,6 +74,7 @@ Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) are th
 - [Semrush Enterprise](https://enterprise.semrush.com/) - Enterprise SEO and AI search platform.
 - [seoClarity](https://www.seoclarity.net/) - Unified SEO and Answer Engine Optimization (AEO) platform for enterprise teams.
 - [Similarweb](https://www.similarweb.com/) - Digital market intelligence, including traffic measurement for AI assistant referrals.
+- [Spegla](https://getspegla.com/) - Visibility scoring across ChatGPT, Claude, Gemini, and Perplexity, reporting rival brands named instead and the sources each assistant cited. Runs in 15 European languages.
 - [Superlines](https://superlines.io/) - AI search intelligence for brands and agencies.
 - [Trakkr](https://trakkr.ai/) - Citation, perception, and competitor tracking across ChatGPT, Claude, and Gemini.
 - [XFunnel](https://www.xfunnel.ai/) - Citation tracking and question discovery across AI search platforms.
