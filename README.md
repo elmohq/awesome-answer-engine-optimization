@@ -66,6 +66,7 @@ Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) are th
 - [Otterly.AI](https://otterly.ai/) - AI search monitoring for ChatGPT, Perplexity, and Google AI Overviews.
 - [Peec AI](https://peec.ai/) - AI search analytics for marketing teams, benchmarking brand performance against competitors.
 - [Profound](https://www.tryprofound.com/) - Brand visibility measurement and optimization for answer engines.
+- [QuotedWrong](https://quotedwrong.com/) - Compares sampled AI pricing answers with vendor pricing sources, with a free provisional scan and paid human-reviewed audits.
 - [Rankscale](https://rankscale.ai/) - AI visibility and ranking tracker across ChatGPT, Perplexity, Gemini, and Google AI Overviews.
 - [Relixir](https://www.relixir.ai/rex) - Generative Engine Optimization (GEO) monitoring paired with automated content generation and deployment.
 - [Scrunch AI](https://scrunch.com/) - AI search visibility monitoring, site optimization, and content delivery to AI agents.
