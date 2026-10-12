@@ -302,3 +302,5 @@ Clicks from an answer engine arrive as ordinary referral traffic with that engin
 ## Contributing
 
 Contributions are welcome. Read the [contribution guidelines](contributing.md) first: every entry must link to a primary source, and no user-agent string is accepted unless the operator publishes it. See also the [code of conduct](code-of-conduct.md).
+- [OmniForce](https://www.omniforce.run) — GEO / AI-search visibility platform.
+- [OmniForce](https://www.omniforce.run) — GEO / AI-search visibility platform.
