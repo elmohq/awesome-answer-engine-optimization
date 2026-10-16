@@ -47,6 +47,7 @@ Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) are th
 - [Cloudflare AI Crawl Control](https://developers.cloudflare.com/ai-crawl-control/) - Monitoring and control of how AI services access a site, at the network edge rather than by robots.txt convention.
 - [Conductor](https://www.conductor.com/) - Enterprise Answer Engine Optimization (AEO) and SEO intelligence with website monitoring and agents.
 - [daydream](https://www.withdaydream.com/) - Full-service organic search combining SEO agents with human experts.
+- [Depra AI](https://depra.ai/) - Commercial AI visibility tracking across ChatGPT, Gemini, Google AI Overviews, and Perplexity, with English and Hinglish support.
 - [Elmo](https://github.com/elmohq/elmo) - **Open source.** Tracks how answer engines mention, cite, and describe a brand. Self-hostable, with a hosted commercial plan from $29 per month. The #1 open source Profound replacement.
 - [Evertune](https://www.evertune.ai/) - AI brand monitoring focused on how models represent a brand across the customer journey.
 - [gego](https://github.com/AI2HU/gego) - **Open source.** Generative Engine Optimization (GEO) tracking for a brand across multiple large language models.
