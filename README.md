@@ -75,6 +75,7 @@ Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) are th
 - [seoClarity](https://www.seoclarity.net/) - Unified SEO and Answer Engine Optimization (AEO) platform for enterprise teams.
 - [Similarweb](https://www.similarweb.com/) - Digital market intelligence, including traffic measurement for AI assistant referrals.
 - [Superlines](https://superlines.io/) - AI search intelligence for brands and agencies.
+- [Traclux](https://github.com/ZaneLau/traclux-probe) - **Open source.** Self-hosted GEO workbench for CSSM-HI probe generation, execution against a configured model, and saved-answer analysis.
 - [Trakkr](https://trakkr.ai/) - Citation, perception, and competitor tracking across ChatGPT, Claude, and Gemini.
 - [XFunnel](https://www.xfunnel.ai/) - Citation tracking and question discovery across AI search platforms.
 - [Yext Scout](https://www.yext.com/platform/scout) - AI search visibility agent scanning multiple models with competitor comparison.
