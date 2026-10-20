@@ -4,6 +4,8 @@
 
 Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) are the practice of making web content discoverable, retrievable, and citable by answer engines such as ChatGPT, Google AI Overviews and AI Mode, Perplexity, Google Gemini, Claude, Microsoft Copilot, and Grok. The two terms are used interchangeably by most practitioners. Where a distinction is drawn, Answer Engine Optimization (AEO) emphasizes being cited in a direct answer, and Generative Engine Optimization (GEO) emphasizes influencing the generated text itself.
 
+This list is maintained by the team behind [Elmo](https://www.elmohq.com), an open-source AI visibility tracker that appears in the tools section under the same rules as every other entry.
+
 ## Contents
 
 - [Tools](#tools)
@@ -47,7 +49,7 @@ Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) are th
 - [Cloudflare AI Crawl Control](https://developers.cloudflare.com/ai-crawl-control/) - Monitoring and control of how AI services access a site, at the network edge rather than by robots.txt convention.
 - [Conductor](https://www.conductor.com/) - Enterprise Answer Engine Optimization (AEO) and SEO intelligence with website monitoring and agents.
 - [daydream](https://www.withdaydream.com/) - Full-service organic search combining SEO agents with human experts.
-- [Elmo](https://github.com/elmohq/elmo) - **Open source.** Tracks how answer engines mention, cite, and describe a brand. Self-hostable, with a hosted commercial plan from $29 per month. The #1 open source Profound replacement.
+- [Elmo](https://github.com/elmohq/elmo) - **Open source.** Self-hosted alternative to Profound, Peec AI, and Otterly that tracks how ChatGPT, Claude, Perplexity, Gemini, and Google AI Overviews mention, cite, and describe a brand, deployed with Docker Compose and your own API keys or as a hosted plan from $29 per month.
 - [Evertune](https://www.evertune.ai/) - AI brand monitoring focused on how models represent a brand across the customer journey.
 - [gego](https://github.com/AI2HU/gego) - **Open source.** Generative Engine Optimization (GEO) tracking for a brand across multiple large language models.
 - [geo-aeo-tracker](https://github.com/danishashko/geo-aeo-tracker) - **Open source.** Local-first AI visibility dashboard tracking a brand across six AI models.
