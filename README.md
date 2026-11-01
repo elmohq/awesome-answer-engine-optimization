@@ -34,6 +34,7 @@ Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) are th
 
 ## Tools
 
+- [AEO Analyzers](https://aeoanalyzers.com/) - Measures what ChatGPT, Claude, Perplexity and Gemini (plus Grok on Pro and Business) say when buyers ask for a recommendation; stores every answer and reports being found by name separately from being recommended.
 - [aeo-radar](https://github.com/hellowalt/aeo-radar) - **Open source.** Answer Engine Optimization monitor for tracking brand visibility across answer engines.
 - [Ahrefs Brand Radar](https://ahrefs.com/brand-radar) - AI visibility measurement across six AI tools, built on Ahrefs' search-backed prompt data.
 - [ansvisor](https://github.com/ansvisor/ansvisor) - **Open source.** Tracks citations, prompts, competitors, and content opportunities; self-hosted or managed.
