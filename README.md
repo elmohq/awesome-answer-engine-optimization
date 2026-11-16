@@ -35,7 +35,7 @@ Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) are th
 ## Tools
 
 - [aeo-radar](https://github.com/hellowalt/aeo-radar) - **Open source.** Answer Engine Optimization monitor for tracking brand visibility across answer engines.
-- [AgentSEO](https://www.agentseo.dev/docs/api-reference) - REST API for answer engine optimization (AEO) and SEO workflows, with Google AI Overview evidence, AI mention tracking, SERP analysis, and rank history.
+- [AgentSEO](https://www.agentseo.dev/docs/api-reference) - SEO and Answer Engine Optimization (AEO) data API for agents, with keyword research, Google SERP, rank, competitor, and AI-search visibility workflows via REST and hosted MCP; 100 one-time Hobby credits and paid plans from $9/month.
 - [Ahrefs Brand Radar](https://ahrefs.com/brand-radar) - AI visibility measurement across six AI tools, built on Ahrefs' search-backed prompt data.
 - [ansvisor](https://github.com/ansvisor/ansvisor) - **Open source.** Tracks citations, prompts, competitors, and content opportunities; self-hosted or managed.
 - [aperture](https://github.com/anyin-ai/aperture) - **Open source.** AI visibility monitoring and analytics for tracking how a brand appears in answer engines.
