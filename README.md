@@ -34,6 +34,7 @@ Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) are th
 
 ## Tools
 
+- [AEO Spotlight](https://aeospotlight.com/) - Tracks brand mentions and cited sources across eight answer engines, with competitor tracking and a remote MCP server.
 - [aeo-radar](https://github.com/hellowalt/aeo-radar) - **Open source.** Answer Engine Optimization monitor for tracking brand visibility across answer engines.
 - [Ahrefs Brand Radar](https://ahrefs.com/brand-radar) - AI visibility measurement across six AI tools, built on Ahrefs' search-backed prompt data.
 - [ansvisor](https://github.com/ansvisor/ansvisor) - **Open source.** Tracks citations, prompts, competitors, and content opportunities; self-hosted or managed.
