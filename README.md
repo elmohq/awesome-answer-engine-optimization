@@ -61,6 +61,7 @@ Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) are th
 - [Known Agents](https://knownagents.com/) - Directory and analytics for AI agents and bots, formerly Dark Visitors.
 - [Known Agents Directory](https://knownagents.com/agents) - Continuously updated catalog of AI crawler user agents and their operators.
 - [LLMrefs](https://llmrefs.com/) - Brand visibility, rank, and citation tracking across generative answer engines.
+- [Mydentify AI Crawler Access Checker](https://github.com/mitdralla/mydentify-ai-crawler-access-checker) - **Open source.** A free, read-only checker for public pages that reports robots.txt access, page-level indexing directives, and the observed HTTP responses when probing documented OpenAI and Anthropic crawler user-agent names; it cannot verify provider IP behavior or guarantee indexing or citations.
 - [Nightwatch](https://nightwatch.io/) - Rank tracker unifying classic search positions with AI visibility in ChatGPT, Claude, Gemini, and Perplexity.
 - [oneglanse](https://github.com/aryamantodkar/oneglanse) - **Open source.** Free Generative Engine Optimization (GEO) tracker for monitoring brand appearance in answer engines.
 - [Otterly.AI](https://otterly.ai/) - AI search monitoring for ChatGPT, Perplexity, and Google AI Overviews.
