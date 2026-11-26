@@ -60,6 +60,7 @@ Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) are th
 - [Knowatoa](https://knowatoa.com/) - AI search visibility tracking oriented toward recovering traffic lost to answer engines.
 - [Known Agents](https://knownagents.com/) - Directory and analytics for AI agents and bots, formerly Dark Visitors.
 - [Known Agents Directory](https://knownagents.com/agents) - Continuously updated catalog of AI crawler user agents and their operators.
+- [Lanesra AI](https://lanesra.ai) - GEO/AEO analytics and optimization for AI search, with AX (Agentic Experience).
 - [LLMrefs](https://llmrefs.com/) - Brand visibility, rank, and citation tracking across generative answer engines.
 - [Nightwatch](https://nightwatch.io/) - Rank tracker unifying classic search positions with AI visibility in ChatGPT, Claude, Gemini, and Perplexity.
 - [oneglanse](https://github.com/aryamantodkar/oneglanse) - **Open source.** Free Generative Engine Optimization (GEO) tracker for monitoring brand appearance in answer engines.
