@@ -63,6 +63,7 @@ Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) are th
 - [LLMrefs](https://llmrefs.com/) - Brand visibility, rank, and citation tracking across generative answer engines.
 - [Nightwatch](https://nightwatch.io/) - Rank tracker unifying classic search positions with AI visibility in ChatGPT, Claude, Gemini, and Perplexity.
 - [oneglanse](https://github.com/aryamantodkar/oneglanse) - **Open source.** Free Generative Engine Optimization (GEO) tracker for monitoring brand appearance in answer engines.
+- [OpenAEO](https://github.com/XenetDev/openaeo) - **Open source.** Local app that tracks how Claude, ChatGPT, Gemini, Grok, and Perplexity mention and cite a brand, with a website audit for AI crawlers.
 - [Otterly.AI](https://otterly.ai/) - AI search monitoring for ChatGPT, Perplexity, and Google AI Overviews.
 - [Peec AI](https://peec.ai/) - AI search analytics for marketing teams, benchmarking brand performance against competitors.
 - [Profound](https://www.tryprofound.com/) - Brand visibility measurement and optimization for answer engines.
